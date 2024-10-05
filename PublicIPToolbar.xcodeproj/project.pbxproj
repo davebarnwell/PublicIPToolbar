@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		56B3B3462CB19BEF0008C9DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56B3B3332CB19BED0008C9DB;
+			remoteInfo = PublicIPToolbar;
+		};
+		56B3B3502CB19BF00008C9DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56B3B3332CB19BED0008C9DB;
+			remoteInfo = PublicIPToolbar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		56B3B3342CB19BED0008C9DB /* PublicIPToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicIPToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B3B3452CB19BEF0008C9DB /* PublicIPToolbarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPToolbarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B3B34F2CB19BF00008C9DB /* PublicIPToolbarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPToolbarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		56B3B3362CB19BED0008C9DB /* PublicIPToolbar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPToolbar;
+			sourceTree = "<group>";
+		};
+		56B3B3482CB19BEF0008C9DB /* PublicIPToolbarTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPToolbarTests;
+			sourceTree = "<group>";
+		};
+		56B3B3522CB19BF00008C9DB /* PublicIPToolbarUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPToolbarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56B3B3312CB19BED0008C9DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B3422CB19BEF0008C9DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B34C2CB19BF00008C9DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56B3B32B2CB19BEC0008C9DB = {
+			isa = PBXGroup;
+			children = (
+				56B3B3362CB19BED0008C9DB /* PublicIPToolbar */,
+				56B3B3482CB19BEF0008C9DB /* PublicIPToolbarTests */,
+				56B3B3522CB19BF00008C9DB /* PublicIPToolbarUITests */,
+				56B3B3352CB19BED0008C9DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56B3B3352CB19BED0008C9DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56B3B3342CB19BED0008C9DB /* PublicIPToolbar.app */,
+				56B3B3452CB19BEF0008C9DB /* PublicIPToolbarTests.xctest */,
+				56B3B34F2CB19BF00008C9DB /* PublicIPToolbarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56B3B3332CB19BED0008C9DB /* PublicIPToolbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B3B3592CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbar" */;
+			buildPhases = (
+				56B3B3302CB19BED0008C9DB /* Sources */,
+				56B3B3312CB19BED0008C9DB /* Frameworks */,
+				56B3B3322CB19BED0008C9DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				56B3B3362CB19BED0008C9DB /* PublicIPToolbar */,
+			);
+			name = PublicIPToolbar;
+			packageProductDependencies = (
+			);
+			productName = PublicIPToolbar;
+			productReference = 56B3B3342CB19BED0008C9DB /* PublicIPToolbar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56B3B3442CB19BEF0008C9DB /* PublicIPToolbarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B3B35C2CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbarTests" */;
+			buildPhases = (
+				56B3B3412CB19BEF0008C9DB /* Sources */,
+				56B3B3422CB19BEF0008C9DB /* Frameworks */,
+				56B3B3432CB19BEF0008C9DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56B3B3472CB19BEF0008C9DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				56B3B3482CB19BEF0008C9DB /* PublicIPToolbarTests */,
+			);
+			name = PublicIPToolbarTests;
+			packageProductDependencies = (
+			);
+			productName = PublicIPToolbarTests;
+			productReference = 56B3B3452CB19BEF0008C9DB /* PublicIPToolbarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56B3B34E2CB19BF00008C9DB /* PublicIPToolbarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B3B35F2CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbarUITests" */;
+			buildPhases = (
+				56B3B34B2CB19BF00008C9DB /* Sources */,
+				56B3B34C2CB19BF00008C9DB /* Frameworks */,
+				56B3B34D2CB19BF00008C9DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56B3B3512CB19BF00008C9DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				56B3B3522CB19BF00008C9DB /* PublicIPToolbarUITests */,
+			);
+			name = PublicIPToolbarUITests;
+			packageProductDependencies = (
+			);
+			productName = PublicIPToolbarUITests;
+			productReference = 56B3B34F2CB19BF00008C9DB /* PublicIPToolbarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56B3B32C2CB19BEC0008C9DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					56B3B3332CB19BED0008C9DB = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					56B3B3442CB19BEF0008C9DB = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 56B3B3332CB19BED0008C9DB;
+					};
+					56B3B34E2CB19BF00008C9DB = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 56B3B3332CB19BED0008C9DB;
+					};
+				};
+			};
+			buildConfigurationList = 56B3B32F2CB19BEC0008C9DB /* Build configuration list for PBXProject "PublicIPToolbar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56B3B32B2CB19BEC0008C9DB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 56B3B3352CB19BED0008C9DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56B3B3332CB19BED0008C9DB /* PublicIPToolbar */,
+				56B3B3442CB19BEF0008C9DB /* PublicIPToolbarTests */,
+				56B3B34E2CB19BF00008C9DB /* PublicIPToolbarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56B3B3322CB19BED0008C9DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B3432CB19BEF0008C9DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B34D2CB19BF00008C9DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56B3B3302CB19BED0008C9DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B3412CB19BEF0008C9DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B3B34B2CB19BF00008C9DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56B3B3472CB19BEF0008C9DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56B3B3332CB19BED0008C9DB /* PublicIPToolbar */;
+			targetProxy = 56B3B3462CB19BEF0008C9DB /* PBXContainerItemProxy */;
+		};
+		56B3B3512CB19BF00008C9DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56B3B3332CB19BED0008C9DB /* PublicIPToolbar */;
+			targetProxy = 56B3B3502CB19BF00008C9DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56B3B3572CB19BF00008C9DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56B3B3582CB19BF00008C9DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		56B3B35A2CB19BF00008C9DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PublicIPToolbar/PublicIPToolbar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PublicIPToolbar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		56B3B35B2CB19BF00008C9DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PublicIPToolbar/PublicIPToolbar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PublicIPToolbar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		56B3B35D2CB19BF00008C9DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PublicIPToolbar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PublicIPToolbar";
+			};
+			name = Debug;
+		};
+		56B3B35E2CB19BF00008C9DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PublicIPToolbar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PublicIPToolbar";
+			};
+			name = Release;
+		};
+		56B3B3602CB19BF00008C9DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PublicIPToolbar;
+			};
+			name = Debug;
+		};
+		56B3B3612CB19BF00008C9DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPToolbarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PublicIPToolbar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56B3B32F2CB19BEC0008C9DB /* Build configuration list for PBXProject "PublicIPToolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B3B3572CB19BF00008C9DB /* Debug */,
+				56B3B3582CB19BF00008C9DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B3B3592CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B3B35A2CB19BF00008C9DB /* Debug */,
+				56B3B35B2CB19BF00008C9DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B3B35C2CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B3B35D2CB19BF00008C9DB /* Debug */,
+				56B3B35E2CB19BF00008C9DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B3B35F2CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B3B3602CB19BF00008C9DB /* Debug */,
+				56B3B3612CB19BF00008C9DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+}
