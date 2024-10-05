@@ -41,11 +41,13 @@
       "size" : "256x256"
     },
     {
+      "filename" : "IPx512.jpeg",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "IP.jpeg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
