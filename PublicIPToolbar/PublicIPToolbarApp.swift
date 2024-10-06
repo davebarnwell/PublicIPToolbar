@@ -38,16 +38,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          // Create the menu with the "Copy IP Address" option
          let menu = NSMenu()
          menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: "a"))
-         menu.addItem(NSMenuItem.separator()) // Add a separator if you want more items later
+         menu.addItem(NSMenuItem.separator())
          menu.addItem(NSMenuItem(title: "Copy IP Address", action: #selector(copyIPAddressToClipboard), keyEquivalent: "c"))
          menu.addItem(NSMenuItem(title: "Refresh", action: #selector(callUpdatePublicIP), keyEquivalent: "r"))
          menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "l"))
-         menu.addItem(NSMenuItem.separator()) // Add a separator if you want more items later
+         menu.addItem(NSMenuItem.separator())
          menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
 
          statusItem?.menu = menu
          
          updatePublicIP()
+         updateLoginItemState()
+        
+         // Add observer for wake from sleep event
+         let notificationCenter = NSWorkspace.shared.notificationCenter
+         notificationCenter.addObserver(self, selector: #selector(systemDidWake), name: NSWorkspace.didWakeNotification, object: nil)
     }
     
     func updatePublicIP() {
@@ -109,7 +114,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func copyIPAddressToClipboard() {
-        // Copy the current IP address to the clipboard
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.setString(currentIPAddress, forType: .string)
@@ -120,6 +124,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func quitApp() {
         NSApplication.shared.terminate(self)
+    }
+    
+@objc func systemDidWake() {
+//        print("System woke from sleep. Updating IP address...")
+        updatePublicIP()
     }
 }
 
