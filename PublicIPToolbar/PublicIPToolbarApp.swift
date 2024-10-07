@@ -65,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .replaceError(with: IPAddress(ip: "Error"))
             .receive(on: RunLoop.main)
             .sink { [weak self] ipAddress in
-                self?.currentIPAddress = ipAddress.ip
+                self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
                 self?.statusItem?.button?.title = ipAddress.ip
             }
         self.startIPRefreshTimer()
@@ -75,6 +75,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { _ in
             self.updatePublicIP()
         }
+    }
+    
+    func formatIPAddress(_ ipAddress: String) -> String {
+        // Check if the address is IPv6 (contains colons)
+        if ipAddress.contains(":") {
+            let components = ipAddress.split(separator: ":")
+            if components.count > 1 {
+                // Return the first and last section of the IPv6 address
+                return "\(components.first!):...:\(components.last!)"
+            }
+        }
+        // If it's not IPv6, return the address as-is
+        return ipAddress
     }
     
     @objc func toggleLoginItem() {

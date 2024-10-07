@@ -8,9 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		56B3B3642CB1A4710008C9DB /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B3B3632CB1A4710008C9DB /* ServiceManagement.framework */; };
+		56C787D32CB3D79800166348 /* PublicIPHelper.app in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		561E3F602CB3CBC9004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F6A2CB3CBC9004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F812CB3D269004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F832CB3D292004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F852CB3D2B7004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F872CB3D2F1004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
+		561E3F892CB3D435004707E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
 		56B3B3462CB19BEF0008C9DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
@@ -25,15 +75,23 @@
 			remoteGlobalIDString = 56B3B3332CB19BED0008C9DB;
 			remoteInfo = PublicIPToolbar;
 		};
+		56C787D02CB3D45B00166348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B3B32C2CB19BEC0008C9DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561E3F4E2CB3CBC7004707E6;
+			remoteInfo = PublicIPHelper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		561C776F2CB1C67700E4A87D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
 			files = (
+				56C787D32CB3D79800166348 /* PublicIPHelper.app in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +100,9 @@
 
 /* Begin PBXFileReference section */
 		561C77612CB1C67700E4A87D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicIPHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		561E3F5F2CB3CBC9004707E6 /* PublicIPHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		561E3F692CB3CBC9004707E6 /* PublicIPHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B3B3342CB19BED0008C9DB /* PublicIPToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicIPToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B3B3452CB19BEF0008C9DB /* PublicIPToolbarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPToolbarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B3B34F2CB19BF00008C9DB /* PublicIPToolbarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPToolbarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +120,21 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		561E3F502CB3CBC7004707E6 /* PublicIPHelper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPHelper;
+			sourceTree = "<group>";
+		};
+		561E3F622CB3CBC9004707E6 /* PublicIPHelperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPHelperTests;
+			sourceTree = "<group>";
+		};
+		561E3F6C2CB3CBC9004707E6 /* PublicIPHelperUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PublicIPHelperUITests;
+			sourceTree = "<group>";
+		};
 		56B3B3362CB19BED0008C9DB /* PublicIPToolbar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -80,6 +156,27 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		561E3F4C2CB3CBC7004707E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F5C2CB3CBC9004707E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F662CB3CBC9004707E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B3B3312CB19BED0008C9DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,6 +208,9 @@
 				56B3B3362CB19BED0008C9DB /* PublicIPToolbar */,
 				56B3B3482CB19BEF0008C9DB /* PublicIPToolbarTests */,
 				56B3B3522CB19BF00008C9DB /* PublicIPToolbarUITests */,
+				561E3F502CB3CBC7004707E6 /* PublicIPHelper */,
+				561E3F622CB3CBC9004707E6 /* PublicIPHelperTests */,
+				561E3F6C2CB3CBC9004707E6 /* PublicIPHelperUITests */,
 				56B3B3622CB1A4710008C9DB /* Frameworks */,
 				56B3B3352CB19BED0008C9DB /* Products */,
 			);
@@ -122,6 +222,9 @@
 				56B3B3342CB19BED0008C9DB /* PublicIPToolbar.app */,
 				56B3B3452CB19BEF0008C9DB /* PublicIPToolbarTests.xctest */,
 				56B3B34F2CB19BF00008C9DB /* PublicIPToolbarUITests.xctest */,
+				561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */,
+				561E3F5F2CB3CBC9004707E6 /* PublicIPHelperTests.xctest */,
+				561E3F692CB3CBC9004707E6 /* PublicIPHelperUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +241,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561E3F712CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelper" */;
+			buildPhases = (
+				561E3F4B2CB3CBC7004707E6 /* Sources */,
+				561E3F4C2CB3CBC7004707E6 /* Frameworks */,
+				561E3F4D2CB3CBC7004707E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				561E3F502CB3CBC7004707E6 /* PublicIPHelper */,
+			);
+			name = PublicIPHelper;
+			packageProductDependencies = (
+			);
+			productName = PublicIPHelper;
+			productReference = 561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		561E3F5E2CB3CBC9004707E6 /* PublicIPHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561E3F742CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelperTests" */;
+			buildPhases = (
+				561E3F5B2CB3CBC9004707E6 /* Sources */,
+				561E3F5C2CB3CBC9004707E6 /* Frameworks */,
+				561E3F5D2CB3CBC9004707E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				561E3F612CB3CBC9004707E6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				561E3F622CB3CBC9004707E6 /* PublicIPHelperTests */,
+			);
+			name = PublicIPHelperTests;
+			packageProductDependencies = (
+			);
+			productName = PublicIPHelperTests;
+			productReference = 561E3F5F2CB3CBC9004707E6 /* PublicIPHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		561E3F682CB3CBC9004707E6 /* PublicIPHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561E3F772CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelperUITests" */;
+			buildPhases = (
+				561E3F652CB3CBC9004707E6 /* Sources */,
+				561E3F662CB3CBC9004707E6 /* Frameworks */,
+				561E3F672CB3CBC9004707E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				561E3F6B2CB3CBC9004707E6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				561E3F6C2CB3CBC9004707E6 /* PublicIPHelperUITests */,
+			);
+			name = PublicIPHelperUITests;
+			packageProductDependencies = (
+			);
+			productName = PublicIPHelperUITests;
+			productReference = 561E3F692CB3CBC9004707E6 /* PublicIPHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		56B3B3332CB19BED0008C9DB /* PublicIPToolbar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56B3B3592CB19BF00008C9DB /* Build configuration list for PBXNativeTarget "PublicIPToolbar" */;
@@ -150,6 +321,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				561E3F822CB3D269004707E6 /* PBXTargetDependency */,
+				561E3F842CB3D292004707E6 /* PBXTargetDependency */,
+				561E3F862CB3D2B7004707E6 /* PBXTargetDependency */,
+				561E3F882CB3D2F1004707E6 /* PBXTargetDependency */,
+				561E3F8A2CB3D435004707E6 /* PBXTargetDependency */,
+				56C787D12CB3D45B00166348 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				56B3B3362CB19BED0008C9DB /* PublicIPToolbar */,
@@ -217,6 +394,17 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					561E3F4E2CB3CBC7004707E6 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					561E3F5E2CB3CBC9004707E6 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 561E3F4E2CB3CBC7004707E6;
+					};
+					561E3F682CB3CBC9004707E6 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 561E3F4E2CB3CBC7004707E6;
+					};
 					56B3B3332CB19BED0008C9DB = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -247,11 +435,35 @@
 				56B3B3332CB19BED0008C9DB /* PublicIPToolbar */,
 				56B3B3442CB19BEF0008C9DB /* PublicIPToolbarTests */,
 				56B3B34E2CB19BF00008C9DB /* PublicIPToolbarUITests */,
+				561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */,
+				561E3F5E2CB3CBC9004707E6 /* PublicIPHelperTests */,
+				561E3F682CB3CBC9004707E6 /* PublicIPHelperUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		561E3F4D2CB3CBC7004707E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F5D2CB3CBC9004707E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F672CB3CBC9004707E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B3B3322CB19BED0008C9DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +488,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		561E3F4B2CB3CBC7004707E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F5B2CB3CBC9004707E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561E3F652CB3CBC9004707E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B3B3302CB19BED0008C9DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +533,41 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		561E3F612CB3CBC9004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F602CB3CBC9004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F6B2CB3CBC9004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F6A2CB3CBC9004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F822CB3D269004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F812CB3D269004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F842CB3D292004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F832CB3D292004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F862CB3D2B7004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F852CB3D2B7004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F882CB3D2F1004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F872CB3D2F1004707E6 /* PBXContainerItemProxy */;
+		};
+		561E3F8A2CB3D435004707E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 561E3F892CB3D435004707E6 /* PBXContainerItemProxy */;
+		};
 		56B3B3472CB19BEF0008C9DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 56B3B3332CB19BED0008C9DB /* PublicIPToolbar */;
@@ -310,9 +578,142 @@
 			target = 56B3B3332CB19BED0008C9DB /* PublicIPToolbar */;
 			targetProxy = 56B3B3502CB19BF00008C9DB /* PBXContainerItemProxy */;
 		};
+		56C787D12CB3D45B00166348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561E3F4E2CB3CBC7004707E6 /* PublicIPHelper */;
+			targetProxy = 56C787D02CB3D45B00166348 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		561E3F722CB3CBC9004707E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PublicIPHelper/PublicIPHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PublicIPHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Public IP Helper";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		561E3F732CB3CBC9004707E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PublicIPHelper/PublicIPHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PublicIPHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Public IP Helper";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		561E3F752CB3CBC9004707E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PublicIPHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PublicIPHelper";
+			};
+			name = Debug;
+		};
+		561E3F762CB3CBC9004707E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PublicIPHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PublicIPHelper";
+			};
+			name = Release;
+		};
+		561E3F782CB3CBC9004707E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PublicIPHelper;
+			};
+			name = Debug;
+		};
+		561E3F792CB3CBC9004707E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3N35J72F6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = freshsauce.co.uk.PublicIPHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PublicIPHelper;
+			};
+			name = Release;
+		};
 		56B3B3572CB19BF00008C9DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -568,6 +969,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		561E3F712CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561E3F722CB3CBC9004707E6 /* Debug */,
+				561E3F732CB3CBC9004707E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		561E3F742CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561E3F752CB3CBC9004707E6 /* Debug */,
+				561E3F762CB3CBC9004707E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		561E3F772CB3CBC9004707E6 /* Build configuration list for PBXNativeTarget "PublicIPHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561E3F782CB3CBC9004707E6 /* Debug */,
+				561E3F792CB3CBC9004707E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		56B3B32F2CB19BEC0008C9DB /* Build configuration list for PBXProject "PublicIPToolbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
