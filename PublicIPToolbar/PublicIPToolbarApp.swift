@@ -86,25 +86,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://api64.ipify.org?format=json")!
         
 //        print("Updating public IP...")
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: IPAddress.self, decoder: JSONDecoder())
-            .replaceError(with: IPAddress(ip: "Error"))
-            .receive(on: RunLoop.main)
-            .sink { [weak self] ipAddress in
-                // Store the full IP address for copying later
-                self?.fullIPAddress = ipAddress.ip
-                self?.fullIPMenuItem.title = "Public IP: \(self?.fullIPAddress ?? "Error")"
+        // Create a URLRequest with a cache policy to ignore cached data
+        var request = URLRequest(url: url)
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        
+        cancellable = URLSession.shared.dataTaskPublisher(for: request)
+        .map { $0.data }
+        .decode(type: IPAddress.self, decoder: JSONDecoder())
+        .replaceError(with: IPAddress(ip: "Error"))
+        .receive(on: RunLoop.main)
+        .sink { [weak self] ipAddress in
+            // Store the full IP address for copying later
+            self?.fullIPAddress = ipAddress.ip
+            self?.fullIPMenuItem.title = "Public IP: \(self?.fullIPAddress ?? "Error")"
 
-                // Format the IP address (shorten IPv6 if needed)
-                self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
-                
-                // Display the shortened or full IP
-                if let ipAddress = self?.currentIPAddress {
-                    self?.statusItem?.button?.title = ipAddress
-                }
-//                print("IP address: \(self?.fullIPAddress ?? "Error")")
+            // Format the IP address (shorten IPv6 if needed)
+            self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
+            
+            // Display the shortened or full IP
+            if let ipAddress = self?.currentIPAddress {
+                self?.statusItem?.button?.title = ipAddress
             }
+//                print("IP address: \(self?.fullIPAddress ?? "Error")")
+        }
         self.startIPRefreshTimer()
     }
     
