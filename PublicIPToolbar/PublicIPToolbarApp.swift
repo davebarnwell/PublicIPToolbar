@@ -127,8 +127,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
 @objc func systemDidWake() {
-//        print("System woke from sleep. Updating IP address...")
-        updatePublicIP()
+    // System woke from sleep. Short delay to allow network to wake up then updating IP address
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.updatePublicIP()
+        }
     }
 }
 
