@@ -71,10 +71,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func monitorNetworkConnectivity() {
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                print("Internet connection available, updating IP address...")
+//                print("Internet connection available, updating IP address...")
                 self.updatePublicIP()
             } else {
-                print("No internet connection")
+                //                print("No internet connection")
+                self.statusItem?.button?.title = "No Network"
             }
         }
         monitor.start(queue: queue)
@@ -84,7 +85,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Fetch the public IP address using an IP check service
         let url = URL(string: "https://api64.ipify.org?format=json")!
         
-        print("Updating public IP...")
+//        print("Updating public IP...")
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: IPAddress.self, decoder: JSONDecoder())
@@ -102,6 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if let ipAddress = self?.currentIPAddress {
                     self?.statusItem?.button?.title = ipAddress
                 }
+//                print("IP address: \(self?.fullIPAddress ?? "Error")")
             }
         self.startIPRefreshTimer()
     }
