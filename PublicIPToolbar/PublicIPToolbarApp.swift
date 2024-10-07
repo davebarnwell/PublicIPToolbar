@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import ServiceManagement
+import Network
 
 @main
 struct PublicIPToolbarApp: App {
@@ -27,6 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentIPAddress: String = "Loading..."
     var fullIPAddress: String = "Loading..."  // Store the full IP address separately
     var fullIPMenuItem: NSMenuItem! // Menu item for showing the full IP address
+    let monitor = NWPathMonitor() // Network path monitor for checking connectivity
+    let queue = DispatchQueue.global(qos: .background) // Run network monitor on a background queue
+
     let helperAppBundleIdentifier = "uk.co.freshsauce.PublicIPHelper"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -54,18 +58,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
          statusItem?.menu = menu
          
-         updatePublicIP()
          updateLoginItemState()
+        
+        // Start monitoring network connectivity
+        monitorNetworkConnectivity()
         
          // Add observer for wake from sleep event
          let notificationCenter = NSWorkspace.shared.notificationCenter
          notificationCenter.addObserver(self, selector: #selector(systemDidWake), name: NSWorkspace.didWakeNotification, object: nil)
     }
     
+    func monitorNetworkConnectivity() {
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                print("Internet connection available, updating IP address...")
+                self.updatePublicIP()
+            } else {
+                print("No internet connection")
+            }
+        }
+        monitor.start(queue: queue)
+    }
+    
     func updatePublicIP() {
         // Fetch the public IP address using an IP check service
         let url = URL(string: "https://api64.ipify.org?format=json")!
         
+        print("Updating public IP...")
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: IPAddress.self, decoder: JSONDecoder())
