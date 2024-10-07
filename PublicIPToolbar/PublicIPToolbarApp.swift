@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
     var cancellable: AnyCancellable?
     var currentIPAddress: String = "Loading..."
+    var fullIPAddress: String = "Loading..."  // Store the full IP address separately
     let helperAppBundleIdentifier = "uk.co.freshsauce.PublicIPHelper"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -65,8 +66,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .replaceError(with: IPAddress(ip: "Error"))
             .receive(on: RunLoop.main)
             .sink { [weak self] ipAddress in
+                // Store the full IP address for copying later
+                self?.fullIPAddress = ipAddress.ip
+                
+                // Format the IP address (shorten IPv6 if needed)
                 self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
-                self?.statusItem?.button?.title = ipAddress.ip
+                
+                // Display the shortened or full IP
+                if let ipAddress = self?.currentIPAddress {
+                    self?.statusItem?.button?.title = ipAddress
+                }
             }
         self.startIPRefreshTimer()
     }
@@ -127,11 +136,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func copyIPAddressToClipboard() {
+        // Copy the full IP address (not the shortened one)
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
-        pasteboard.setString(currentIPAddress, forType: .string)
-        
-//        print("Copied IP to clipboard: \(currentIPAddress)")
+        pasteboard.setString(fullIPAddress, forType: .string)
     }
 
     
