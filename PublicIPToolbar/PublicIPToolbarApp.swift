@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var cancellable: AnyCancellable?
     var currentIPAddress: String = "Loading..."
     var fullIPAddress: String = "Loading..."  // Store the full IP address separately
+    var fullIPMenuItem: NSMenuItem! // Menu item for showing the full IP address
     let helperAppBundleIdentifier = "uk.co.freshsauce.PublicIPHelper"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -36,8 +37,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
              button.title = currentIPAddress
          }
          
-         // Create the menu with the "Copy IP Address" option
+         // Create the menu
          let menu = NSMenu()
+        // Add the full IP address at the top of the menu
+        fullIPMenuItem = NSMenuItem(title: "Public IP: \(fullIPAddress)", action: nil, keyEquivalent: "")
+        menu.addItem(fullIPMenuItem)
+        
+        menu.addItem(NSMenuItem.separator()) // Add a separator after the full IP
          menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: "a"))
          menu.addItem(NSMenuItem.separator())
          menu.addItem(NSMenuItem(title: "Copy IP Address", action: #selector(copyIPAddressToClipboard), keyEquivalent: "c"))
@@ -68,7 +74,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .sink { [weak self] ipAddress in
                 // Store the full IP address for copying later
                 self?.fullIPAddress = ipAddress.ip
-                
+                self?.fullIPMenuItem.title = "Public IP: \(self?.fullIPAddress ?? "Error")"
+
                 // Format the IP address (shorten IPv6 if needed)
                 self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
                 
@@ -92,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let components = ipAddress.split(separator: ":")
             if components.count > 1 {
                 // Return the first and last section of the IPv6 address
-                return "\(components.first!):...:\(components.last!)"
+                return "\(components[0]):\(components[1]):...:\(components.last!)"
             }
         }
         // If it's not IPv6, return the address as-is
