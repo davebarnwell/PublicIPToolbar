@@ -63,6 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Start monitoring network connectivity
         monitorNetworkConnectivity()
+        
+        updatePublicIP()
+        startIPRefreshTimer()  // Only start the timer once
     }
     
     func monitorNetworkConnectivity() {
@@ -103,11 +106,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.statusItem?.button?.title = self.currentIPAddress
                 //                print("IP address: \(self?.fullIPAddress ?? "Error")")
             }
-        self.startIPRefreshTimer()
     }
     
     func startIPRefreshTimer() {
-        ipRefreshTimer?.invalidate() // Invalidate any existing timer
+        ipRefreshTimer?.invalidate()  // Ensure any previous timer is invalidated
         ipRefreshTimer = Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             self.updatePublicIP()
@@ -172,8 +174,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
         
     func applicationWillTerminate(_ notification: Notification) {
-        cancellable?.cancel()
         ipRefreshTimer?.invalidate()
+        cancellable?.cancel()
         monitor.cancel()  // Cancel network path monitor
     }
     
