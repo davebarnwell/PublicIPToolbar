@@ -159,8 +159,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func showAbout() {
         // Display an "About" dialog
         let alert = NSAlert()
+        let currentYear = Calendar.current.component(.year, from: Date())
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         alert.messageText = "Public IP Toolbar"
-        alert.informativeText = "Version 1.0\nThis app displays your current public IP address in the menu bar.\nBy Dave Barnwell"
+        alert.informativeText = "Version \(version ?? "?.?")\nDisplays your current public IP address in the menu bar.\nCopyright © \(currentYear) Dave Barnwell"
         alert.alertStyle = .informational
         alert.addButton(withTitle: "OK")
         alert.runModal()
