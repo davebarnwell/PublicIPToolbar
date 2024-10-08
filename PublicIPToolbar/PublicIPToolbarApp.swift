@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentIPAddress: String = "Loading..."
     var fullIPAddress: String = "Loading..."  // Store the full IP address separately
     var fullIPMenuItem: NSMenuItem! // Menu item for showing the full IP address
+    var ipRefreshTimer: Timer?
     let monitor = NWPathMonitor() // Network path monitor for checking connectivity
     let queue = DispatchQueue.global(qos: .background) // Run network monitor on a background queue
     
@@ -62,10 +63,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Start monitoring network connectivity
         monitorNetworkConnectivity()
-        
-        // Add observer for wake from sleep event
-        let notificationCenter = NSWorkspace.shared.notificationCenter
-        notificationCenter.addObserver(self, selector: #selector(systemDidWake), name: NSWorkspace.didWakeNotification, object: nil)
     }
     
     func monitorNetworkConnectivity() {
@@ -110,8 +107,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startIPRefreshTimer() {
-        Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { [weak self] _ in
-            guard let self = self else { return } // Safely unwrap `self`
+        ipRefreshTimer?.invalidate() // Invalidate any existing timer
+        ipRefreshTimer = Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
             self.updatePublicIP()
         }
     }
@@ -172,20 +170,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pasteboard.clearContents()
         pasteboard.setString(fullIPAddress, forType: .string)
     }
-    
-    @objc func systemDidWake() {
-        // System woke from sleep. Short delay to allow network to wake up then updating IP address
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.updatePublicIP()
-        }
-    }
-    
+        
     func applicationWillTerminate(_ notification: Notification) {
-        let notificationCenter = NSWorkspace.shared.notificationCenter
-        notificationCenter.removeObserver(self, name: NSWorkspace.didWakeNotification, object: nil)
-        cancellable?.cancel()  // Cancel Combine subscriptions on termination
+        cancellable?.cancel()
+        ipRefreshTimer?.invalidate()
+        monitor.cancel()  // Cancel network path monitor
     }
-
     
     @objc func quitApp() {
         cancellable?.cancel()  // Cancel any ongoing subscription
