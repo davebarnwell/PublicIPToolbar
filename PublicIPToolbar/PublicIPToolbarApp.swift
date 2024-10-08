@@ -30,51 +30,50 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var fullIPMenuItem: NSMenuItem! // Menu item for showing the full IP address
     let monitor = NWPathMonitor() // Network path monitor for checking connectivity
     let queue = DispatchQueue.global(qos: .background) // Run network monitor on a background queue
-
+    
     let helperAppBundleIdentifier = "uk.co.freshsauce.PublicIPHelper"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-         // Create the status bar item with a variable length
-         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-         
-         if let button = statusItem?.button {
-             button.title = currentIPAddress
-         }
-         
-         // Create the menu
-         let menu = NSMenu()
+        // Create the status bar item with a variable length
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        
+        if let button = statusItem?.button {
+            button.title = currentIPAddress
+        }
+        
+        // Create the menu
+        let menu = NSMenu()
         // Add the full IP address at the top of the menu
         fullIPMenuItem = NSMenuItem(title: "Public IP: \(fullIPAddress)", action: nil, keyEquivalent: "")
         menu.addItem(fullIPMenuItem)
         
         menu.addItem(NSMenuItem.separator()) // Add a separator after the full IP
-         menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: "a"))
-         menu.addItem(NSMenuItem.separator())
-         menu.addItem(NSMenuItem(title: "Copy IP Address", action: #selector(copyIPAddressToClipboard), keyEquivalent: "c"))
-         menu.addItem(NSMenuItem(title: "Refresh", action: #selector(callUpdatePublicIP), keyEquivalent: "r"))
-         menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "l"))
-         menu.addItem(NSMenuItem.separator())
-         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
-
-         statusItem?.menu = menu
-         
-         updateLoginItemState()
+        menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: "a"))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Copy IP Address", action: #selector(copyIPAddressToClipboard), keyEquivalent: "c"))
+        menu.addItem(NSMenuItem(title: "Refresh", action: #selector(callUpdatePublicIP), keyEquivalent: "r"))
+        menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "l"))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
+        
+        statusItem?.menu = menu
+        
+        updateLoginItemState()
         
         // Start monitoring network connectivity
         monitorNetworkConnectivity()
         
-         // Add observer for wake from sleep event
-         let notificationCenter = NSWorkspace.shared.notificationCenter
-         notificationCenter.addObserver(self, selector: #selector(systemDidWake), name: NSWorkspace.didWakeNotification, object: nil)
+        // Add observer for wake from sleep event
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(self, selector: #selector(systemDidWake), name: NSWorkspace.didWakeNotification, object: nil)
     }
     
     func monitorNetworkConnectivity() {
-        monitor.pathUpdateHandler = { path in
+        monitor.pathUpdateHandler = { [weak self] path in
+            guard let self = self else { return } // Safely unwrap `self`
             if path.status == .satisfied {
-//                print("Internet connection available, updating IP address...")
                 self.updatePublicIP()
             } else {
-                //                print("No internet connection")
                 self.statusItem?.button?.title = "No Network"
             }
         }
@@ -85,38 +84,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Fetch the public IP address using an IP check service
         let url = URL(string: "https://api64.ipify.org?format=json")!
         
-//        print("Updating public IP...")
+        cancellable?.cancel()  // Cancel any previous subscriptions
+        
+        //        print("Updating public IP...")
         // Create a URLRequest with a cache policy to ignore cached data
         var request = URLRequest(url: url)
         request.cachePolicy = .reloadIgnoringLocalCacheData
         
         cancellable = URLSession.shared.dataTaskPublisher(for: request)
-        .map { $0.data }
-        .decode(type: IPAddress.self, decoder: JSONDecoder())
-        .replaceError(with: IPAddress(ip: "Error"))
-        .receive(on: RunLoop.main)
-        .sink { [weak self] ipAddress in
-            // Store the full IP address for copying later
-            self?.fullIPAddress = ipAddress.ip
-            self?.fullIPMenuItem.title = "Public IP: \(self?.fullIPAddress ?? "Error")"
-
-            // Format the IP address (shorten IPv6 if needed)
-            self?.currentIPAddress = self?.formatIPAddress(ipAddress.ip) ?? "Error"
-            
-            // Display the shortened or full IP
-            if let ipAddress = self?.currentIPAddress {
-                self?.statusItem?.button?.title = ipAddress
+            .map { $0.data }
+            .decode(type: IPAddress.self, decoder: JSONDecoder())
+            .replaceError(with: IPAddress(ip: "Error"))
+            .receive(on: RunLoop.main)
+            .sink { [weak self] ipAddress in
+                guard let self = self else { return } // Safely unwrap `self`
+                // Store the full IP address for copying later
+                // Update full IP and status item
+                self.fullIPAddress = ipAddress.ip
+                self.fullIPMenuItem.title = "Public IP: \(self.fullIPAddress)"
+                self.currentIPAddress = self.formatIPAddress(ipAddress.ip)
+                self.statusItem?.button?.title = self.currentIPAddress
+                //                print("IP address: \(self?.fullIPAddress ?? "Error")")
             }
-//                print("IP address: \(self?.fullIPAddress ?? "Error")")
-        }
         self.startIPRefreshTimer()
     }
     
     func startIPRefreshTimer() {
-        Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { _ in
+        Timer.scheduledTimer(withTimeInterval: 60 * 5, repeats: true) { [weak self] _ in
+            guard let self = self else { return } // Safely unwrap `self`
             self.updatePublicIP()
         }
     }
+
     
     func formatIPAddress(_ ipAddress: String) -> String {
         // Check if the address is IPv6 (contains colons)
@@ -134,7 +133,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func toggleLoginItem() {
         // Use SMAppService to manage login item
         let appService = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
-
+        
         if appService.status == .enabled {
             // If already enabled, disable the login item
             try? appService.unregister()
@@ -156,7 +155,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func callUpdatePublicIP() {
         self.updatePublicIP()
     }
-
+    
     @objc func showAbout() {
         // Display an "About" dialog
         let alert = NSAlert()
@@ -173,18 +172,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pasteboard.clearContents()
         pasteboard.setString(fullIPAddress, forType: .string)
     }
-
     
-    @objc func quitApp() {
-        NSApplication.shared.terminate(self)
-    }
-    
-@objc func systemDidWake() {
-    // System woke from sleep. Short delay to allow network to wake up then updating IP address
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+    @objc func systemDidWake() {
+        // System woke from sleep. Short delay to allow network to wake up then updating IP address
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.updatePublicIP()
         }
     }
+    
+    func applicationWillTerminate(_ notification: Notification) {
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.removeObserver(self, name: NSWorkspace.didWakeNotification, object: nil)
+        cancellable?.cancel()  // Cancel Combine subscriptions on termination
+    }
+
+    
+    @objc func quitApp() {
+        cancellable?.cancel()  // Cancel any ongoing subscription
+        NSApplication.shared.terminate(self)
+    }
+    
 }
 
 struct IPAddress: Decodable {
