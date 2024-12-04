@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560472E02D00E1C200D38400 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560472DF2D00E1C200D38400 /* Metal.framework */; };
 		56B3B3642CB1A4710008C9DB /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B3B3632CB1A4710008C9DB /* ServiceManagement.framework */; };
 		56C787D32CB3D79800166348 /* PublicIPHelper.app in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		560472DF2D00E1C200D38400 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		561C77612CB1C67700E4A87D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		561E3F4F2CB3CBC7004707E6 /* PublicIPHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicIPHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		561E3F5F2CB3CBC9004707E6 /* PublicIPHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PublicIPHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560472E02D00E1C200D38400 /* Metal.framework in Frameworks */,
 				56B3B3642CB1A4710008C9DB /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +235,7 @@
 		56B3B3622CB1A4710008C9DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				560472DF2D00E1C200D38400 /* Metal.framework */,
 				56B3B3632CB1A4710008C9DB /* ServiceManagement.framework */,
 				561C77612CB1C67700E4A87D /* Cocoa.framework */,
 			);
@@ -872,7 +876,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPToolbar;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -907,7 +911,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPToolbar;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.freshsauce.PublicIPHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
